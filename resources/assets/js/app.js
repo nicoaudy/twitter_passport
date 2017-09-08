@@ -16,6 +16,7 @@ window.Vue = require('vue');
  */
 
 Vue.component('timeline', require('./components/Timeline.vue'));
+Vue.component('post-tweet', require('./components/PostTweet.vue'));
 
 const app = new Vue({
     el: '#app'

@@ -4,8 +4,11 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-info">
                     <div class="panel-heading">Timeline</div>
-
+                
                     <div class="panel-body">
+
+                        <post-tweet :tweets="tweets"></post-tweet>
+
                         <div class="media" v-for="tweet in tweets">
                             <div class="media-left">
                                 <a href="">
@@ -25,12 +28,17 @@
 </template>
 
 <script>
+    import PostTweet from './PostTweet'
+
     export default {
         data() {
             return {
                 tweets: []
             }
         },
+        component: [
+            PostTweet
+        ],
         mounted() {
             console.log('Component mounted.')
             axios.get('tweets').then(response => {
